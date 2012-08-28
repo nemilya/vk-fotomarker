@@ -85,18 +85,8 @@ post '/upload_by_server' do
 
   response = RestClient.post upload_url, :photo => File.new('res.png', 'rb')
 
-#  require 'crack'
-# Crack::
   upload_result = JSON.parse(response)
-
-  info = {}
-  info['aid']    = upload_result['aid']
-  info['hash']   = upload_result['hash']
-  info['server'] = upload_result['server']
-  info['photos_list'] = upload_result['photos_list']
   res2 = @app.photos.save(upload_result)
 
-
-  p res2
   res2.to_json
 end
