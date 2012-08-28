@@ -1,1 +1,5 @@
+config/oauth.yml
+config/oauth.local.yml
+vendor/*
 start.bat
+res.png

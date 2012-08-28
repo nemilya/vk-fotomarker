@@ -1,4 +1,9 @@
 %form{ action: "#/sketch", method: "get" }
+  Target Album:
+  %select{ name: "aid" }
+    :for album in albums
+      %option{ value: album.aid}= album.title 
+  %br
   URL:
   %input{name: 'url'}
   %input{type: 'submit'}
