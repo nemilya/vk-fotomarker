@@ -1,0 +1,16 @@
+bgurl
+%p= url
+
+
+
+%label.label{ for: 'bgctrl' } Убрать фон &nbsp;
+  %input#bgctrl.checkbox.inline{type:'checkbox'}
+
+.tools
+  %a{ data-tool: "marker", href: "#tools_sketch"} Marker
+  %a{ data-tool: "eraser", href: "#tools_sketch"} Eraser
+%canvas#tools_sketch{ height: "300", style: "background: url(#{url}) no-repeat center center;", width: "600"}
+:javascript
+  $(function() {
+    $('#tools_sketch').sketch({defaultColor: "#ccc"});
+  });
